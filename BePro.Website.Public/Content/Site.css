@@ -1,24 +1,407 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿body, html {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    color: #777;
+    width: 100% !important;
+    height: 100% !important;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+h1 {
+    font-weight: 700;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+    h1 strong {
+        font-weight: 900;
+    }
+
+h2 {
+    text-transform: uppercase;
+    line-height: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: #555;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
+h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #555;
+}
+
+h4 {
+    font-weight: 500;
+    color: #555;
+    margin: 1.33em !important;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+p {
+    font-size: 14px;
+}
+
+a {
+    color: #754747;
+}
+
+    a:hover, a:focus {
+        text-decoration: none;
+        color: #F4D03F;
+    }
+
+ul, ol {
+    list-style: none;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ddd;
+    z-index: 99999;
+    height: 100%;
+}
+
+#status {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+    padding: 0;
+}
+
+ul, ol {
+    padding: 0;
+    webkit-padding: 0;
+    moz-padding: 0;
+}
+
+hr {
+    height: 4px;
+    width: 70px;
+    text-align: center;
+    position: relative;
+    background: #E75926;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 0;
+}
+/* Navigation */
+.navbar-custom {
+    padding: 0;
+    border-bottom: 0;
+    letter-spacing: 1px;
+    background: #333;
+    text-transform: uppercase;
+}
+
+    .navbar-custom .navbar-brand {
+        font-weight: 600;
+    }
+
+        .navbar-custom .navbar-brand i.fa {
+            color: #E75926;
+        }
+
+        .navbar-custom .navbar-brand:focus {
+            outline: 0;
+        }
+
+    .navbar-custom .navbar-toggle {
+        color: #eee;
+        font-size: 18px;
+        border-radius: 2px;
+        padding: 0 4px;
+    }
+
+        .navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle:focus {
+            background-color: #E75926;
+            color: #ffffff;
+        }
+
+    .navbar-custom .navbar-brand .navbar-toggle:focus, .navbar-custom .navbar-brand .navbar-toggle:active {
+        outline: 0;
+    }
+
+    .navbar-custom a {
+        color: #fff;
+    }
+
+    .navbar-custom .nav li a {
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+    }
+
+        .navbar-custom .nav li a:hover {
+            outline: 0;
+            color: #E75926;
+            background-color: transparent;
+        }
+
+        .navbar-custom .nav li a:focus, .navbar-custom .nav li a:active {
+            outline: 0;
+            background-color: transparent;
+            color: #E75926;
+        }
+
+    .navbar-custom .nav li.active {
+        outline: 0;
+    }
+
+        .navbar-custom .nav li.active a {
+            background-color: rgba(255,255,255,.3);
+        }
+
+            .navbar-custom .nav li.active a:hover {
+                color: #fff;
+            }
+
+.btn-default {
+    color: #f6f6f6;
+    height: 4.8rem;
+    background: #f16223;
+    border: 0;
+    border-bottom: 0.2rem;
+    /*border-style:*/
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border-color: #cd3f00;
+    padding: 12px 24px;
+    margin: 0 8px;
+    font-size: 18px;
+    transition: all 0.5s;
+    font-family: 'BPG Mrgvlovani Caps', sans-serif;
+}
+
+    .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
+        color: #f6f6f6;
+        background-color: #a13e1a;
+    }
+
+.section-title.center {
+    padding: 30px 0;
+    font-family: "BPG Mrgvlovani Caps", sans-serif;
+}
+
+    .section-title h2, .section-title.center h2 {
+        font-size: 3rem;
+        color: #242424;
+        margin-bottom: 30px;
+        font-weight: 500;
+    }
+
+
+label {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    float: left;
+}
+
+.btn:active, .btn.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+    a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+        outline: none;
+        outline-offset: none;
+    }
+
+/* Footer Section*/
+#footer {
+    background: #333;
+    color: #777;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    #footer a {
+        color: #999999;
+    }
+
+        #footer a:hover, a:focus {
+            color: #e75926;
+        }
+
+    #footer p {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+@media (max-width: 768px) {
+    .hover-bg .hover-text {
+        padding: 20%;
+    }
+}
+
+@media (max-width: 640px) {
+    #intro .intro-body H1 {
+        font-size: 5em;
+    }
+}
+
+.navbar {
+    min-height: 6rem;
+    background: rgba(255,255,255,0.8);
+}
+
+.navbar-nav > li > a,
+.navbar-brand {
+    line-height: 3rem;
+}
+
+a.navbar-brand.page-scroll {
+    width: 6rem;
+    height: 6rem;
+    background-color: #03585f;
+    padding: 0;
+}
+
+.logo-container > svg {
+    height: 6rem !important;
+    width: auto !important;
+    padding-left: 15rem;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.logo-container {
+    display: inherit !important;
+    height: 0;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+    height: 0 !important;
+}
+
+.nav.navbar-nav > li > a {
+    font-family: "BPG Mrgvlovani", sans-serif;
+    color: #242424;
+}
+
+.navbar-right {
+    padding-right: 17.5rem !important;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+#footer {
+    font-family: 'BPG Mrgvlovani', sans-serif;
+    font-weight: 500;
+    font-size: 14rem;
+    color: white;
+    background: url(../img/footer.jpg) center;
+    background-size: cover;
+}
+
+    #footer p {
+        text-align: left;
+    }
+
+    #footer > div > div > div > div > i {
+        font-size: 1.4rem !important;
+    }
+
+    #footer > div > div:nth-child(1) {
+        padding: 0;
+    }
+
+.copyright-container > p:not(.p60) {
+    margin: 0 !important;
+}
+
+.copyright-container > p > b {
+    color: #95c126;
+}
+
+.p60 {
+    height: 4rem;
+    margin-top: 10px !important;
+}
+
+ .copyright-container > p {
+        margin: 0 !important;
+    }
+
+        .news-form {
+        color: white;
+        background: #03585f;
+        padding: 3rem;
+    }
+
+    .news-form * {
+        margin-bottom: 2rem !important;
+    }
+
+    .news-form h4 {
+        margin-top: 0 !important;
+        color: inherit;
+    }
+
+    .news-form input {
+        height: 4.8rem;
+        border-radius: 0;
+    }
+
+    .p60 {
+        height: 4rem;
+    }
+
 input,
-select,
 textarea {
-    max-width: 280px;
+    font-family: 'BPG Mrgvlovani', sans-serif;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+input {
+    height: 4.8rem !important;
+    border-radius: 0;
 }

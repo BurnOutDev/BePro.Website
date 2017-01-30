@@ -21,11 +21,25 @@ namespace BePro.Website.Public
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/jquery.isotope.js",
+                      "~/Scripts/jquery.parallax.js",
+                      "~/Scripts/jquery.prettyPhoto.js",
+                      "~/Scripts/main.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/prettyPhoto.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/fonts").Include(
+                     "~/Content/font-awesome.min.css",
+                     "~/fonts/bpg-mrgvlovani.min.css",
+                     "~/fonts/bpg-mrgvlovani-caps.min.css",
+                     "~/fonts/OpenSans.css"));
+
+            bundles.Add(new StyleBundle("~/Content/page/prices").Include(
+                    "~/Content/Pages/prices.css"));
         }
     }
 }

@@ -3,40 +3,152 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - BePro</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/fonts")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="preloader">
+        <div id="status"> <img src="../img/preloader.gif" height="64" width="64" alt=""> </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <svg version="1.1" id="HamburgerIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                <rect id="Bottom" fill="#FFFFFF" x="12" y="38" class="st0" width="36" height="5" />
+                <rect id="Middle" fill="#FFFFFF" x="12" y="27" class="st0" width="36" height="5" />
+                <rect id="Top" fill="#FFFFFF" x="12" y="16" class="st0" width="36" height="5" />
+                </svg>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a href="../Home/Index" class="page-scroll logo-container">
+                <svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="1039.1 0.3 97 60" enable-background="new 1039.1 0.3 97 60" xml:space="preserve">
+                <path fill="#108A94" d="M1124.6,19.6c-3.2-1.2-7.1-0.7-7.1-0.7l-1,2.7c0,0,3.1,0.2,6.7,1.9c3.6,1.6,6.2,3.3,6.2,3.3l1.1-2.9
+                    	C1130.5,23.8,1127.9,20.9,1124.6,19.6L1124.6,19.6z" />
+                <path fill="#108A94" d="M1136,24.2l-1-1.2l0.1-0.3c0,0,1.1-1.7-1.4-1.5c-0.1,0-0.2,0.1-0.3,0.1l-6.7-7.9l-13.6,2.1l3.5,3.5l0.2-0.6
+                    	c0,0,4.3-0.6,7.9,0.8c3.6,1.4,6.5,4.7,6.5,4.7l-0.4,1.1l2.8-0.4c-0.6,1.4-1.2,3.1-1.4,3.6l-0.8-0.3l-0.7,1.8l1.3-0.3l0.9,1.1
+                    	l0.7-1.8l-0.8-0.3l1.5-3.9L1136,24.2z M1134.6,22.2c0,0-0.1,0.2-0.1,0.3l-0.5-0.6C1134.3,21.8,1134.8,21.7,1134.6,22.2z
+                    	 M1134.4,23.7c-0.1,0.3-0.5,0.5-0.8,0.3c-0.3-0.1-0.5-0.5-0.3-0.7c0.1-0.3,0.5-0.5,0.8-0.3C1134.4,23.1,1134.5,23.4,1134.4,23.7z" />
+                <path fill="#0D8993" d="M1128.4,25.6l-10.5-4.6c0,0-4.4,1.2-5.4,5.7c0,0-1.6,8.3,0,13.9c0,0,1.8,6.9,8.7,6.6c0,0,8.9,1,9-9.5
+                    	C1130.1,37.7,1130.9,25.5,1128.4,25.6z M1120.1,43.6c-1.8-0.5-2.2-5.7-2.3-9.8c0-2.7,0.1-4.8,0.1-4.8l0-0.6c0.3-6.4,4.5-4.1,4.5-4.1
+                    	c2.4-0.3,1.6,13.7,1.6,13.7C1124.2,40.3,1123.6,44.4,1120.1,43.6z" />
+                <path fill="#0D8993" d="M1101.6,24.5l-1.2-3.8h-3v26.5h5.6l0.1-18.8c0,0-0.6-5,6.3-2.8v-4.9C1109.4,20.7,1102.4,19.6,1101.6,24.5z" />
+                <path fill="#0D8993" d="M1086.2,15l-10.2,0.1v32.1h6V35.9c0,0,12.3,1.4,11.6-10.2C1093.6,25.7,1094.8,14.3,1086.2,15z M1082,32.2V18
+                    	c6.8-0.8,5.8,7.1,5.8,7.1C1088.5,33.2,1082,32.2,1082,32.2z" />
+                <path fill="#F26224" d="M1049.3,47.1l22.4,0.1v-3.5h-13.1l0.1-12.6h9.4V28h-9.4l-0.1-9.5h11.3l-0.1-3.5l-20.5,0.2c0,0,6.7,1.6,6,7.9
+                    	c0,0,0.6,5-6.4,6.8c0,0,7.9,1.5,7.8,8.1C1056.7,38.1,1057.9,45.2,1049.3,47.1z" />
+                <path fill="#F26224" d="M1039.1,17.5l0.1,11.3c0,0,7.2,1.9,6.8-5.6C1046,23.1,1046.9,16.3,1039.1,17.5z" />
+                <path fill="#F26224" d="M1039.1,31.7v12.7c0,0,8.9,2.2,7.9-7.4C1047,37,1047.6,30.6,1039.1,31.7z" />
+                </svg>
+
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden"> <a href="#page-top"></a> </li>
+                <li> <a class="page-scroll" href="#about">მე ვეძებ...</a> </li>
+                <li> <a class="page-scroll" href="#services">ჩვენ შესახებ</a> </li>
+                <li> <a class="page-scroll" href="#works">სიახლეები</a> </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden"> <a href="#page-top"></a> </li>
+                <li> <a class="page-scroll" href="#works"><i class="fa fa-search"></i></a></li>
+                <li> <a class="page-scroll" href="#services"><i class="fa fa-user"></i></a> </li>
+                <li> <a class="page-scroll" href="#about"><i class="fa fa-lock"></i></a> </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    @RenderBody()
+
+    <div id="footer">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <div class="col-md-2">
+                <p>
+                    <svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" height="60" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="1039.1 0.3 97 60" enable-background="new 1039.1 0.3 97 60" xml:space="preserve">
+                    <path fill="#108A94" d="M1124.6,19.6c-3.2-1.2-7.1-0.7-7.1-0.7l-1,2.7c0,0,3.1,0.2,6.7,1.9c3.6,1.6,6.2,3.3,6.2,3.3l1.1-2.9
+                    	C1130.5,23.8,1127.9,20.9,1124.6,19.6L1124.6,19.6z"></path>
+                    <path fill="#108A94" d="M1136,24.2l-1-1.2l0.1-0.3c0,0,1.1-1.7-1.4-1.5c-0.1,0-0.2,0.1-0.3,0.1l-6.7-7.9l-13.6,2.1l3.5,3.5l0.2-0.6
+                    	c0,0,4.3-0.6,7.9,0.8c3.6,1.4,6.5,4.7,6.5,4.7l-0.4,1.1l2.8-0.4c-0.6,1.4-1.2,3.1-1.4,3.6l-0.8-0.3l-0.7,1.8l1.3-0.3l0.9,1.1
+                    	l0.7-1.8l-0.8-0.3l1.5-3.9L1136,24.2z M1134.6,22.2c0,0-0.1,0.2-0.1,0.3l-0.5-0.6C1134.3,21.8,1134.8,21.7,1134.6,22.2z
+                    	 M1134.4,23.7c-0.1,0.3-0.5,0.5-0.8,0.3c-0.3-0.1-0.5-0.5-0.3-0.7c0.1-0.3,0.5-0.5,0.8-0.3C1134.4,23.1,1134.5,23.4,1134.4,23.7z"></path>
+                    <path fill="#0D8993" d="M1128.4,25.6l-10.5-4.6c0,0-4.4,1.2-5.4,5.7c0,0-1.6,8.3,0,13.9c0,0,1.8,6.9,8.7,6.6c0,0,8.9,1,9-9.5
+                    	C1130.1,37.7,1130.9,25.5,1128.4,25.6z M1120.1,43.6c-1.8-0.5-2.2-5.7-2.3-9.8c0-2.7,0.1-4.8,0.1-4.8l0-0.6c0.3-6.4,4.5-4.1,4.5-4.1
+                    	c2.4-0.3,1.6,13.7,1.6,13.7C1124.2,40.3,1123.6,44.4,1120.1,43.6z"></path>
+                    <path fill="#0D8993" d="M1101.6,24.5l-1.2-3.8h-3v26.5h5.6l0.1-18.8c0,0-0.6-5,6.3-2.8v-4.9C1109.4,20.7,1102.4,19.6,1101.6,24.5z"></path>
+                    <path fill="#0D8993" d="M1086.2,15l-10.2,0.1v32.1h6V35.9c0,0,12.3,1.4,11.6-10.2C1093.6,25.7,1094.8,14.3,1086.2,15z M1082,32.2V18
+                    	c6.8-0.8,5.8,7.1,5.8,7.1C1088.5,33.2,1082,32.2,1082,32.2z"></path>
+                    <path fill="#F26224" d="M1049.3,47.1l22.4,0.1v-3.5h-13.1l0.1-12.6h9.4V28h-9.4l-0.1-9.5h11.3l-0.1-3.5l-20.5,0.2c0,0,6.7,1.6,6,7.9
+                    	c0,0,0.6,5-6.4,6.8c0,0,7.9,1.5,7.8,8.1C1056.7,38.1,1057.9,45.2,1049.3,47.1z"></path>
+                    <path fill="#F26224" d="M1039.1,17.5l0.1,11.3c0,0,7.2,1.9,6.8-5.6C1046,23.1,1046.9,16.3,1039.1,17.5z"></path>
+                    <path fill="#F26224" d="M1039.1,31.7v12.7c0,0,8.9,2.2,7.9-7.4C1047,37,1047.6,30.6,1039.1,31.7z"></path>
+                </svg>
+                </p>
+                <p>
+                    ჩვენ გვჯერა, რომ ეფექტური ონლაინ ინტერაქცია ერთ-ერთი უნიკალური.
+                </p>
+                <div class="row social-icons-container">
+                    <div class="col-md-2"><p><i class="fa fa-facebook"></i>   </p></div>
+                    <div class="col-md-2"><p><i class="fa fa-google-plus"></i></p></div>
+                    <div class="col-md-2"><p><i class="fa fa-instagram"></i>  </p></div>
+                    <div class="col-md-2"><p><i class="fa fa-linkedin"></i>   </p></div>
+                    <div class="col-md-2"><p><i class="fa fa-youtube"></i>    </p></div>
+                </div>
+                <div class="copyright-container">
+                    <p>Designed by <b>Sales Partner</b></p>
+                    <p>Copyright © 2016 Be Pro</p>
+                    <p>All rights reserved</p>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+            <div class="col-md-2">
+                <p class="p60"></p>
+                <p>მე ვეძებ...</p>
+                <p>კორპორაციული კლიენტებისთვის</p>
+                <p>ჩვენ შესახებ</p>
+                <p>ჩვენი ტრენერები</p>
+            </div>
+            <div class="col-md-2">
+                <p class="p60"></p>
+                <p>ჩვენი ინტერიერი</p>
+                <p>სიახლეები</p>
+                <p>სოციალური მედია</p>
+                <p>კონტაქტი</p>
+            </div>
+            <div class="col-md-2">
+                <div class="copyright-container">
+                    <p class="p60"></p>
+                    <p>(+995) 599 01 02</p>
+                    <p>თბილისი, ფანჯიკიძის ქ. 1</p>
+                    <p>info@bepro.com.ge</p>
+                    <p>www.bepro.com.ge</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <form class="news-form">
+                    <div class="form-group">
+                        <h4>სიახლეების გამოწერა</h4>
+                        <input type="text" placeholder="ელ-ფოსტა" class="form-control" />
+                        <button class="btn btn-default form-control" style="margin: 0; display: block">სიახლეები</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
+    
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

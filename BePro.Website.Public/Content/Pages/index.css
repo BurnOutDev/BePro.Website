@@ -1,0 +1,460 @@
+
+/* Home Section */
+#intro {
+    display: table;
+    width: 100%;
+    height: 66rem !important;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(../../img/Slider.png) no-repeat center center fixed;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+    #intro .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+        #intro .intro-body H1 {
+            font-size: 76px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+        }
+
+        #intro .intro-body .brand-heading {
+            color: #E75926;
+            text-shadow: 0 4px #a13e1a;
+        }
+
+        #intro .intro-body .intro-text {
+            font-size: 18px;
+        }
+
+@media(min-width:768px) {
+    #intro {
+        height: 100%;
+        padding: 0;
+    }
+
+        #intro .intro-body .intro-text {
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 100px;
+            color: rgba(255,255,255,0.9);
+        }
+}
+
+/* About Section */
+#about {
+    padding: 140px 0;
+    background: #f6f6f6;
+}
+
+    #about .about-text {
+        margin-left: 10px;
+    }
+
+    #about H4 {
+        font-size: 20px;
+    }
+
+    #about li {
+        margin-bottom: 3px;
+        list-style: none;
+        padding: 0;
+        font-size: 13px;
+    }
+
+        #about li:before {
+            content: "✓";
+            font-weight: 600;
+            padding-right: 10px;
+            color: #e75926;
+        }
+
+    #about i.fa {
+        float: left;
+        display: block;
+        margin-right: 15px;
+        color: #fff;
+        font-size: 44px;
+        text-shadow: 0 0 1px #666;
+    }
+
+    #about img {
+        margin-top: 20px;
+    }
+
+    #about p {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+    .portfolio-item .hover-bg {
+        height: 23rem;
+        width: 23rem;
+        overflow: hidden;
+        position: relative;
+        background: #acacac;
+    }
+
+.hover-bg .hover-text {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.6);
+    background: #0d8a93;
+    padding: 30% 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+    .hover-bg .hover-text > h4 {
+        font-family: 'BPG Mrgvlovani', sans-serif;
+        font-size: 2rem;
+        opacity: 0;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+        transition: all 0.3s;
+        color: #f6f6f6;
+    }
+
+.hover-bg:hover .hover-text > h4 {
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.hover-bg .hover-text > p {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    transition: all 0.3s;
+}
+
+.hover-bg:hover .hover-text > p {
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.hover-bg .hover-text > i {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    transition: all 0.3s;
+}
+
+.hover-bg:hover .hover-text > i {
+    opacity: 1;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+.hover-bg:hover .hover-text {
+    opacity: 1;
+}
+
+#works i.fa {
+    font-size: 20px;
+    padding: 5px;
+    color: #F4D03F;
+}
+/* Testimonials Section */
+#testimonials {
+    background: url(../../img/testimonials-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ddd;
+    padding: 140px 0;
+}
+
+    #testimonials h2 {
+        color: #f6f6f6;
+    }
+
+    #testimonials p {
+        font-size: 1.4rem;
+        font-family: 'BPG Mrgvlovani', sans-serif;
+    }
+
+    #testimonials blockquote {
+        position: relative;
+        margin-top: 20px;
+        border: 0;
+        text-align: center;
+        color: rgba(255,255,255,0.8);
+    }
+
+    #testimonials i {
+        font-size: 24px;
+        color: rgba(255,255,255,0.3);
+        margin-bottom: 14px;
+    }
+
+/* Contact Section */
+#contact {
+    padding: 0 0 40px 0;
+    padding-top: 2rem;
+    background: url(../../img/havequestion.jpg);
+}
+
+    #contact .contact-item {
+        padding: 10px;
+        margin: 10px;
+        height: 100px;
+        border-radius: 4px;
+    }
+
+    #contact h3 {
+        font-size: 20px;
+        font-weight: 400;
+        margin-top: 40px;
+    }
+
+    #contact form {
+        padding: 30px 0;
+    }
+
+    #contact i.fa {
+        font-size: 22px;
+        color: #e75926;
+        margin-bottom: 10px;
+    }
+
+    #contact .text-danger {
+        color: #ff3333;
+        text-align: left;
+    }
+
+    #contact > .container > .section-title {
+        padding-bottom: 0;
+    }
+
+        #contact > .container > .section-title > h2 {
+            color: white;
+        }
+
+#contact .form-control {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+    #contact .form-control:focus {
+        border-color: inherit;
+        outline: 0;
+        -webkit-box-shadow: transparent;
+        box-shadow: transparent;
+    }
+
+#contact .btn-default {
+    background: #cf5022;
+    border: 0;
+    border-radius: 0;
+    padding: 10px 20px;
+    color: #f6f6f6;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+    #contact .btn-default:hover, #contact .btn-default:focus {
+        color: #f6f6f6;
+        background: #a13e1a;
+    }
+
+.btn:active, .btn.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+    a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+        outline: none;
+        outline-offset: none;
+    }
+
+#contact .social ul {
+    margin-top: 30px;
+}
+
+    #contact .social ul li {
+        display: inline-block;
+        margin: 0 20px;
+    }
+
+#contact .social i.fa {
+    font-size: 24px;
+    padding-top: 8px;
+    color: #cf5022;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+    #contact .social i.fa:hover {
+        color: #a13e1a;
+    }
+/* Footer Section*/
+
+@media (max-width: 640px) {
+    #intro .intro-body H1 {
+        font-size: 5em;
+    }
+}
+
+
+.btn-intro {
+    height: auto;
+    line-height: 9.5rem !important;
+    width: 50rem !important;
+    font-size: 3rem;
+    font-family: "BPG Mrgvlovani Caps", sans-serif;
+    padding: 0 !important;
+    background: #f16223;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Questions Section */
+#questions {
+    padding: 3rem 0;
+    background: #e6e6e6;
+    background: white;
+}
+
+    #questions .thumbnail {
+        background: transparent;
+        border: 0;
+    }
+
+        #questions .thumbnail .caption {
+            padding: 9px;
+            color: #777;
+        }
+
+
+/* Team Section */
+#team {
+    padding: 3rem 0;
+    background: white;
+}
+
+img.img-thumbnail.team-img {
+    width: auto;
+    height: 33rem;
+    border: 0;
+    border-radius: 0;
+    background-color: #acacac;
+    padding: 0;
+}
+
+#team .thumbnail {
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
+    #team .thumbnail .caption {
+        height: 15rem;
+        padding: 0.9rem;
+        padding-left: 6rem;
+        color: white;
+        text-align: initial;
+        font-family: 'BPG Mrgvlovani', sans-serif;
+        font-size: 1.4rem;
+    }
+
+        #team .thumbnail .caption > h3 {
+            color: white;
+            font-family: 'BPG Mrgvlovani Caps', sans-serif;
+            font-size: 1.6rem;
+        }
+
+    #team .thumbnail .left-caption {
+        background: #03585f;
+    }
+
+    #team .thumbnail .center-caption {
+        background: #95c126;
+    }
+
+    #team .thumbnail .right-caption {
+        background: #f16223;
+    }
+
+#team > div > #row > div {
+    padding: 0;
+}
+
+#team > .container-fluid {
+    padding: 0;
+}
+
+#directionsForm > div.form-group > input {
+    width: 42rem;
+    height: 4.8rem;
+    border-radius: 0;
+}
+
+#directionsForm > div.form-group > * {
+    display: inline-block;
+    /*vertical-align: initial;*/
+}
+
+#directionsForm > div.form-group > button:last-child {
+    background: #0c8993;
+}
+
+#address {
+    padding-top: 2rem;
+    background: url(../../img/map.jpg) center;
+}
+
+    #address > * > * > h2 {
+        font-family: 'BPG Mrgvlovani', sans-serif;
+    }
+
+    #address > .container {
+        height: 46.5rem;
+        z-index: 1;
+    }
+
+#map {
+    height: 100%;
+    z-index: 0;
+}
+
+#address input {
+    background: white;
+}
