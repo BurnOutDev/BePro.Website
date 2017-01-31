@@ -36,5 +36,25 @@ namespace BePro.Website.Public.Controllers
         {
             return View();
         }
+
+        public ActionResult Corporate()
+        {
+            return View();
+        }
+
+        public ActionResult News()
+        {
+            return View();
+        }
+
+        public ActionResult Open()
+        {
+            return View();
+        }
+
+        public ActionResult Price()
+        {
+            return View();
+        }
     }
 }

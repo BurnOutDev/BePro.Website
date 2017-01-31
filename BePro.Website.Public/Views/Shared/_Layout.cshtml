@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - BePro</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/fonts")
     @Scripts.Render("~/bundles/modernizr")
@@ -16,7 +18,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-brand page-scroll" href="#page-top">
+            <a class="navbar-brand page-scroll">
                 <svg version="1.1" id="HamburgerIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
                 <rect id="Bottom" fill="#FFFFFF" x="12" y="38" class="st0" width="36" height="5" />
@@ -26,7 +28,7 @@
             </a>
         </div>
         <div class="navbar-header">
-            <a href="../Home/Index" class="page-scroll logo-container">
+            <a class="page-scroll logo-container">
                 <svg version="1.1" id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="1039.1 0.3 97 60" enable-background="new 1039.1 0.3 97 60" xml:space="preserve">
                 <path fill="#108A94" d="M1124.6,19.6c-3.2-1.2-7.1-0.7-7.1-0.7l-1,2.7c0,0,3.1,0.2,6.7,1.9c3.6,1.6,6.2,3.3,6.2,3.3l1.1-2.9
@@ -46,7 +48,6 @@
                 <path fill="#F26224" d="M1039.1,17.5l0.1,11.3c0,0,7.2,1.9,6.8-5.6C1046,23.1,1046.9,16.3,1039.1,17.5z" />
                 <path fill="#F26224" d="M1039.1,31.7v12.7c0,0,8.9,2.2,7.9-7.4C1047,37,1047.6,30.6,1039.1,31.7z" />
                 </svg>
-
             </a>
         </div>
 
@@ -66,10 +67,52 @@
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                 <li class="hidden"> <a href="#page-top"></a> </li>
                 <li> <a class="page-scroll" href="#works"><i class="fa fa-search"></i></a></li>
-                <li> <a class="page-scroll" href="#services"><i class="fa fa-user"></i></a> </li>
+                <li>
+                    <a class="dropdown-toggle page-scroll" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <div id="user-dropdown" class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <form>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" placeholder="სახელი" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" placeholder="პაროლი" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group">
+                                <label class="checkbox">
+                                    <input type="checkbox" value="remember-me"> პაროლის დამახსოვრება
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-default">შესვლა</button>
+                        </form>
+                    </div>
+                </li>
                 <li> <a class="page-scroll" href="#about"><i class="fa fa-lock"></i></a> </li>
             </ul>
         </div>
+        <ul class="navbar-custom-left navbar-left opened">
+            <li><a class="nav-link" href="#">მე ვეძებ...</a></li>
+            <li><a class="nav-link" href="#">კორპორაციული კლიენტებისთვის</a></li>
+            <li><a class="nav-link" href="#">ჩვენ შესახებ</a></li>
+            <li><a class="nav-link" href="#">ჩვენი ტრენერები</a></li>
+            <li><a class="nav-link" href="#">ჩვენი ინტერიერი</a></li>
+            <li><a class="nav-link" href="#">სიახლეები</a></li>
+            <li><a class="nav-link" href="#">სოციალური მედია</a></li>
+            <li><a class="nav-link" href="../Home/Contact">კონტაქტი</a></li>
+        </ul>
+        @*<ul class="navbar-custom-right opened">
+                <li><a class="nav-link" href="#">მე ვეძებ...</a></li>
+                <li><a class="nav-link" href="#">კორპორაციული კლიენტებისთვის</a></li>
+                <li><a class="nav-link" href="#">ჩვენ შესახებ</a></li>
+                <li><a class="nav-link" href="#">ჩვენი ტრენერები</a></li>
+                <li><a class="nav-link" href="#">ჩვენი ინტერიერი</a></li>
+                <li><a class="nav-link" href="#">სიახლეები</a></li>
+                <li><a class="nav-link" href="#">სოციალური მედია</a></li>
+                <li><a class="nav-link" href="../Home/Contact">კონტაქტი</a></li>
+            </ul>*@
     </nav>
 
 
@@ -148,7 +191,7 @@
             </div>
         </div>
     </div>
-    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

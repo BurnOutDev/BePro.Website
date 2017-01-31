@@ -1,27 +1,31 @@
-﻿
+﻿var menuTl = new TimelineMax();
+menuTl.add(TweenMax.from($('.navbar-custom-left'), 0.5, { x: -200, ease: Power1.easeInOut }));
+menuTl.add(TweenMax.staggerFrom($('.navbar-custom-left').children(), 0.5, { x: -200, ease: Power1.easeInOut }, 0.1), "-=0.5");
+menuTl.stop();
+
+$('.navbar-brand').on('click',
+       function () {
+           if ($('.navbar-custom-left').hasClass('opened')) {
+               menuTl.play();
+               $('.navbar-custom-left').removeClass('opened');
+           } else {
+               menuTl.reverse();
+               $('.navbar-custom-left').addClass('opened');
+           }
+       });
+
+$('#user-dropdown').on('click', function (e) {
+    e.stopPropagation();
+});
+
+// Home Logo
+$('#Logo').on('click', function () { window.location = '/'; });
+
 function main() {
 
     (function () {
         'use strict';
 
-        //// Hide .navbar first
-        //$(".navbar").hide();
-
-        //// Fade in .navbar
-        //$(function () {
-        //	$(window).scroll(function () {
-        //        // set distance user needs to scroll before we fadeIn navbar
-        //		if ($(this).scrollTop() > 200) {
-        //			$('.navbar').fadeIn();
-        //		} else {
-        //			$('.navbar').fadeOut();
-        //		}
-        //	});
-
-
-        //});
-
-        // Preloader */
         $(window).on('load', function () {
 
             // will first fade out the loading animation 
@@ -109,7 +113,6 @@ function main() {
             $('#services').parallax("100%", 0.3);
             $('#aboutimg').parallax("100%", 0.3);
             $('#testimonials').parallax("100%", 0.1);
-
         }
         initParallax();
 

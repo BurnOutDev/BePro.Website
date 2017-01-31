@@ -365,15 +365,15 @@ a.navbar-brand.page-scroll {
     margin-top: 10px !important;
 }
 
- .copyright-container > p {
-        margin: 0 !important;
-    }
+.copyright-container > p {
+    margin: 0 !important;
+}
 
-        .news-form {
-        color: white;
-        background: #03585f;
-        padding: 3rem;
-    }
+.news-form {
+    color: white;
+    background: #03585f;
+    padding: 3rem;
+}
 
     .news-form * {
         margin-bottom: 2rem !important;
@@ -389,9 +389,9 @@ a.navbar-brand.page-scroll {
         border-radius: 0;
     }
 
-    .p60 {
-        height: 4rem;
-    }
+.p60 {
+    height: 4rem;
+}
 
 input,
 textarea {
@@ -399,9 +399,120 @@ textarea {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
+    border: 0;
 }
 
-input {
-    height: 4.8rem !important;
-    border-radius: 0;
+    input:not([type='checkbox']) {
+        height: 4.8rem !important;
+        border-radius: 0 !important;
+        border: 0 !important;
+    }
+
+.input-group {
+    border: none;
+}
+
+.input-group-addon {
+    border: 0 !important;
+    background: #0d8a93;
+    color: white;
+    height: 4.8rem;
+    width: 4.8rem;
+}
+
+input[type='checkbox'] {
+    margin-top: 0 !important;
+}
+
+.navbar-custom-left {
+    background: #03585f;
+    position: fixed;
+    margin-top: 6rem;
+    padding-top: 1.5rem;
+    padding-right: 2rem;
+    width: 20rem;
+    height: 60rem;
+}
+
+    .navbar-custom-left > li {
+        color: white;
+        padding-left: 2.8rem;
+        font-size: 1.4rem;
+        font-family: 'BPG Mrgvlovani', sans-serif;
+        /*height: 4.4rem;*/
+        width: 20rem;
+        vertical-align: middle;
+        display: block;
+        padding: 1.5rem 1.5rem;
+    }
+
+        .navbar-custom-left > li:hover {
+            background: #0c8993;
+        }
+
+        .navbar-custom-left > li > a {
+            /*white-space: nowrap;*/
+        }
+
+.navbar-custom-right {
+    background: #03585f;
+    position: fixed;
+    margin-top: 6rem;
+    padding-top: 1.5rem;
+    padding-right: 2rem;
+    width: 20rem;
+    height: 60rem;
+    float: right;
+}
+
+    .navbar-custom-right > li {
+        color: white;
+        padding-left: 2.8rem;
+        font-size: 1.4rem;
+        font-family: 'BPG Mrgvlovani', sans-serif;
+        /*height: 4.4rem;*/
+        width: 20rem;
+        vertical-align: middle;
+        display: block;
+        padding: 1.5rem 1.5rem;
+    }
+
+        .navbar-custom-right > li:hover {
+            background: #0c8993;
+        }
+
+        .navbar-custom-right > li > a {
+            /*white-space: nowrap;*/
+        }
+
+#user-dropdown {
+    width: 33rem;
+    padding-top: 3.4rem;
+    padding-bottom: 3.4rem;
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+    background: #03585f;
+}
+
+    #user-dropdown > .news-form {
+        padding: 5px;
+    }
+
+    #user-dropdown > form > button {
+        margin: 0;
+        width: 100%;
+    }
+
+    #user-dropdown > form > div {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+        #user-dropdown > form > div:nth-child(3) {
+            margin-left: 2rem;
+        }
+
+.checkbox {
+    font-family: 'BPG Mrgvlovani',sans-serif;
+    color: white;
 }
