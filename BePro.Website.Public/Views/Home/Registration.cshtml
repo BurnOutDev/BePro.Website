@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+}
+
+<div id="registration-form" class="text-center">
+    <div class="container">
+        <div class="section-title center">
+            <h2>რეგისტრაცია</h2>
+        </div>
+
+        <form action="../Home/Registration" method="post">
+            <div class="row">
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="სახელი">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="გვარი">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="პირადი ნომერი">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="დაბადების თარიღი">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="მობილური ტელეფონის ნომერი">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="ელ-ფოსტა">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-sm" placeholder="განათლება">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-sm" placeholder="დასაქმებული">
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="კომპანია">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="პოზიცია">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group btn-clear-form">
+                        <button id="btn-clear" class="btn btn-default" type="reset">გასუფთავება</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group upload-form-group">
+                        <input  type="text" disabled>
+                        <button class="btn btn-default" type="button">ატვირთეთ CV</button>
+                        <button class="btn btn-default" type="button">გადმოწერეთ ფორმა</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="აირჩიე სასურველი თარიღები">
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-sm" placeholder="აირჩიე სასურველი კურსი">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group captcha-form-group">
+                        <input type="text">
+                        <img src="https://www.abeautifulsite.net/content/uploads/2011/01/captcha.png" alt="Captcha" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea id="message-textarea" rows="10" class="form-control" placeholder="შეტყობინება"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group btn-clear-form">
+                        <button id="btn-submit" class="btn btn-default" type="submit">გაგზავნა</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<link href="~/Content/Pages/Registration.css" rel="stylesheet" />

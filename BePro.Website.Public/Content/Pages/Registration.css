@@ -1,0 +1,68 @@
+﻿#registration-form > .container {
+    width: 91rem; /* 880 + 30 = 910 */
+}
+
+textarea {
+    border: 1px solid #848484 !important;
+    max-width: 88rem;
+}
+
+#registration-form > div > form > div > input,
+#registration-form > div > form > div > div > div > input {
+    border: 1px solid #848484 !important;
+}
+
+#btn-clear {
+    margin: 0;
+    width: 23rem;
+    background: #828282;
+}
+
+.btn-clear-form {
+    float: right;
+}
+
+.btn-clear-form {
+    float: right;
+}
+
+.upload-form-group > * {
+    margin: 0;
+}
+
+.upload-form-group > *:first-child {
+    float: left;
+}
+
+.upload-form-group > *:last-child {
+    float: right;
+}
+
+.upload-form-group > input {
+    width: 23.4rem;
+}
+
+.upload-form-group > button:first-of-type {
+    width: 24.4rem;
+}
+
+.upload-form-group > button:last-of-type {
+    width: 34.9rem;
+}
+
+.captcha-form-group {
+    float: left;
+}
+
+.captcha-form-group > input {
+    width: 23.4rem;
+    margin-right: 2.2rem;
+}
+
+.captcha-form-group > img {
+    height: 4.8rem;
+}
+
+.form-group {
+    margin-bottom: 4.4rem;
+}

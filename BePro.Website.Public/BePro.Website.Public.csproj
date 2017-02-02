@@ -262,6 +262,7 @@
     <Content Include="Content\Pages\open.css" />
     <Content Include="Content\Pages\price.css" />
     <Content Include="Content\Pages\prices.css" />
+    <Content Include="Content\Pages\Registration.css" />
     <Content Include="fonts\bpg-mrgvlovani-caps.min.css" />
     <Content Include="fonts\bpg-mrgvlovani.min.css" />
     <Content Include="fonts\OpenSans.css" />
@@ -292,7 +293,9 @@
     <Content Include="img\news\2.jpg" />
     <Content Include="img\news\3.jpg" />
     <Content Include="img\news\4.jpg" />
-    <Content Include="img\pic.jpg" />
+    <Content Include="img\pic1.jpg" />
+    <Content Include="img\pic2.jpg" />
+    <Content Include="img\pic3.jpg" />
     <Content Include="img\portfolio\01.jpg" />
     <Content Include="img\portfolio\02.jpg" />
     <Content Include="img\portfolio\03.jpg" />
@@ -431,6 +434,8 @@
     <Content Include="Views\Home\Corporate.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Open.cshtml" />
+    <Content Include="Views\Home\Price.cshtml" />
+    <Content Include="Views\Home\Registration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

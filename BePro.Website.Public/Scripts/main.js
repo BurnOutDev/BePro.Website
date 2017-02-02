@@ -3,6 +3,31 @@ menuTl.add(TweenMax.from($('.navbar-custom-left'), 0.5, { x: -200, ease: Power1.
 menuTl.add(TweenMax.staggerFrom($('.navbar-custom-left').children(), 0.5, { x: -200, ease: Power1.easeInOut }, 0.1), "-=0.5");
 menuTl.stop();
 
+var subMenuTl = new TimelineMax();
+subMenuTl.add(TweenMax.fromTo($('.navbar-custom-sub-left'), 0.5, { x: -250, ease: Power1.easeInOut }, { x: 200, ease: Power1.easeInOut }));
+subMenuTl.add(TweenMax.staggerFrom($('.navbar-custom-sub-left').children(), 0.5, { x: -250, ease: Power1.easeInOut }, 0.1), "-=0.5");
+subMenuTl.stop();
+
+$($('.navbar-custom-left').children()[0]).hover(function () {
+    subMenuTl.play();
+    $('.navbar-custom-sub-left').addClass('opened');
+},
+function () {
+    if ($('.navbar-custom-sub-left').is(':hover')) {
+        return;
+    }
+    else {
+        subMenuTl.reverse();
+        $('.navbar-custom-sub-left').removeClass('opened');
+    }
+});
+
+$($('.navbar-custom-sub-left')).hover(function () { },
+    function () {
+        subMenuTl.reverse();
+        $('.navbar-custom-sub-left').removeClass('opened');
+});
+
 $('.navbar-brand').on('click',
        function () {
            if ($('.navbar-custom-left').hasClass('opened')) {

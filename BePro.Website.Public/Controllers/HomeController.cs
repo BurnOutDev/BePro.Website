@@ -56,5 +56,10 @@ namespace BePro.Website.Public.Controllers
         {
             return View();
         }
+
+        public ActionResult Registration()
+        {
+            return View();
+        }
     }
 }
