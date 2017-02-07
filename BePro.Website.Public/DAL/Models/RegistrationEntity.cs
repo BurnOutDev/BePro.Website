@@ -6,7 +6,7 @@ using System.Web;
 
 namespace BePro.Website.Public.DAL.Models
 {
-    public class RegistrationEntity
+    public class RegistrationEntity : Entity
     {
         [Key]
         public long EntityID { get; set; }

@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
-                    <a href="#team" class="btn btn-intro btn-default page-scroll">შეაღე წარმატების კარი</a>
+                    <a href="../Home/Registration" class="btn btn-intro btn-default page-scroll">შეაღე წარმატების კარი</a>
                 </div>
             </div>
         </div>
@@ -148,28 +148,28 @@
             <h2>კითხვა გაქვთ? დაგვიკავშირდით!</h2>
         </div>
         <div class="col-md-8 col-md-offset-2">
-            <form name="sentMessage" id="contactForm" novalidate>
+            <form action="../Home/SendMessage">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <div class="form-group">
-                            <input type="text" id="name" class="form-control" placeholder="სახელი" required="required">
+                            <input type="text" name="Name" name="Name" class="form-control" placeholder="სახელი" required="required">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-md-6 col-md-offset-3">
                         <div class="form-group">
-                            <input type="email" id="email" class="form-control" placeholder="ელ. ფოსტა" required="required">
+                            <input type="email" name="Email" class="form-control" placeholder="ელ. ფოსტა" required="required">
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-md-6 col-md-offset-3">
                         <div class="form-group">
-                            <textarea name="message" id="message" class="form-control" rows="4" placeholder="შეტყობინება" required></textarea>
+                            <textarea name="Message" class="form-control" rows="4" placeholder="შეტყობინება" required></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default">გაგზავნა</button>
+                <button id="send-message" type="button" class="btn btn-default">გაგზავნა</button>
             </form>
         </div>
     </div>
@@ -237,4 +237,28 @@
         });
     }
 
+    var obj;
+
+    document.getElementById('send-message').addEventListener('click', function () {
+        var $form = $(document.getElementById('send-message')).parents('form');
+        $.ajax({
+            type: "POST",
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            error: function (xhr, status, error) {
+                obj = { xhr: xhr, status: status, error: error };
+            },
+            success: function (response) {
+                Lobibox.notify('success', {
+                    title: 'შეტყობინება გაიგზავნა',
+                    position: 'top right',
+                    sound: false,
+                    msg: 'დაკიკავშირდებით უმოკლეს დროში.',
+                    delayIndicator: false
+                });
+            }
+        });
+
+        return false;// if it's a link to prevent post
+    });
 </script>

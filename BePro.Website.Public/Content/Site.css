@@ -561,3 +561,12 @@ input[type='checkbox'] {
     cursor: pointer;
 }
 
+/* Notifications Lobiani*/
+
+.lobibox-notify-title {
+    font-family: 'BPG Mrgvlovani Caps', sans-serif;
+}
+
+.lobibox-notify-msg {
+    font-family: 'BPG Mrgvlovani', sans-serif;
+}

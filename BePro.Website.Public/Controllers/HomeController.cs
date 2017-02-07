@@ -102,7 +102,10 @@ namespace BePro.Website.Public.Controllers
                     PrivateNumber = model.PrivateNumber,
                     Work = model.Work,
                     WorkCompany = model.WorkCompany,
-                    WorkPosition = model.WorkPosition
+                    WorkPosition = model.WorkPosition,
+                    DateCreated = DateTime.UtcNow,
+                    UserAgent = Request.UserAgent,
+                    IPAddress = Request.UserHostAddress
                 };
 
                 Context.RegistrationEntities.Add(entity);
@@ -124,6 +127,24 @@ namespace BePro.Website.Public.Controllers
         public ActionResult RegistrationView(RegistrationViewModel model)
         {
             return View();
+        }
+
+        [HttpPost]
+        public HttpStatusCodeResult SendMessage(MessageViewModel model)
+        {
+            Context.MessageEntities.Add(new MessageEntity()
+            {
+                DateCreated = DateTime.Now,
+                Email = model.Email,
+                IPAddress = Request.UserHostAddress,
+                Message = model.Message,
+                Name = model.Name,
+                UserAgent = Request.UserAgent
+            });
+
+            Context.SaveChanges();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
     }
 }

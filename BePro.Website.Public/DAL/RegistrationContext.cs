@@ -15,5 +15,6 @@ namespace BePro.Website.Public.DAL
         }
 
         public DbSet<RegistrationEntity> RegistrationEntities { get; set; }
+        public DbSet<MessageEntity> MessageEntities { get; set; }
     }
 }

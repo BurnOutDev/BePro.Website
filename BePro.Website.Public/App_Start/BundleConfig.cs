@@ -40,6 +40,12 @@ namespace BePro.Website.Public
 
             bundles.Add(new StyleBundle("~/Content/page/prices").Include(
                     "~/Content/Pages/prices.css"));
+
+            bundles.Add(new StyleBundle("~/Content/lobibox").Include(
+                 "~/Content/Lobibox/*.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/lobibox").Include(
+                   "~/Scripts/Lobibox/*.js"));
         }
     }
 }
