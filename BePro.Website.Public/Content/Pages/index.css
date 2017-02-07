@@ -229,7 +229,6 @@
     }
 
     #contact form {
-        
     }
 
     #contact i.fa {
@@ -244,52 +243,51 @@
     }
 
     #contact > .container > .section-title {
-        
     }
 
         #contact > .container > .section-title > h2 {
             color: white;
         }
 
-#contact .form-control {
-    display: block;
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
-}
-
-    #contact .form-control:focus {
-        border-color: inherit;
-        outline: 0;
-        -webkit-box-shadow: transparent;
-        box-shadow: transparent;
+    #contact .form-control {
+        display: block;
+        width: 100%;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -webkit-transition: none;
+        -o-transition: none;
+        transition: none;
     }
 
-#contact .btn-default {
-    background: #cf5022;
-    border: 0;
-    border-radius: 0;
-    padding: 10px 20px;
-    color: #f6f6f6;
-    margin-top: 15px;
-    font-size: 15px;
-}
+        #contact .form-control:focus {
+            border-color: inherit;
+            outline: 0;
+            -webkit-box-shadow: transparent;
+            box-shadow: transparent;
+        }
 
-    #contact .btn-default:hover, #contact .btn-default:focus {
+    #contact .btn-default {
+        background: #cf5022;
+        border: 0;
+        border-radius: 0;
+        padding: 10px 20px;
         color: #f6f6f6;
-        background: #a13e1a;
+        margin-top: 15px;
+        font-size: 15px;
     }
+
+        #contact .btn-default:hover, #contact .btn-default:focus {
+            color: #f6f6f6;
+            background: #a13e1a;
+        }
 
 .btn:active, .btn.active {
     background-image: none;
@@ -437,7 +435,8 @@ img.img-thumbnail.team-img {
 }
 
 #address {
-    background: url(../../img/map.jpg) center;
+    /*background: url(../../img/map.jpg) center;*/
+    height: 46.5rem;
 }
 
     #address > * > * > h2 {
@@ -447,10 +446,22 @@ img.img-thumbnail.team-img {
     #address > .container {
         height: 46.5rem;
         z-index: 1;
+        pointer-events: none;
+        background: transparent;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    #address > .container > form > div > * {
+        pointer-events: all;
     }
 
 #map {
-    height: 100%;
+    height: 46.5rem;
+    position: absolute;
+    left: 0;
+    right: 0;
     z-index: 0;
 }
 

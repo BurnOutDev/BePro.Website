@@ -1,0 +1,135 @@
+﻿@model IEnumerable<BePro.Website.Public.DAL.Models.RegistrationEntity>
+
+@{
+    ViewBag.Title = "Registrations";
+}
+
+<div id="testimonials" class="text-center">
+    <div class="container-fluid">
+        <div class="section-title center">
+            <h2>რა არის BePro?</h2>
+        </div>
+        <div class="row">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PrivateNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.BirthDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MobileNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Education)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Work)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WorkCompany)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WorkPosition)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Course)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CourseDates)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DocumentFile)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PrivateNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BirthDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MobileNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Education)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Work)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WorkCompany)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WorkPosition)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Course)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CourseDates)
+                        </td>
+                        <td>
+                            @Html.ActionLink("გადმოწერა", "DownloadCV", new { regId = item.EntityID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<style type="text/css">
+    /* Testimonials Section */
+#testimonials {
+}
+
+    #testimonials h2 {
+        color: #242424;
+    }
+
+    #testimonials p {
+        font-size: 1.4rem;
+        font-family: 'BPG Mrgvlovani', sans-serif;
+        color: #242424;
+    }
+
+    #testimonials i {
+        font-size: 24px;
+        color: rgba(255,255,255,0.3);
+        margin-bottom: 14px;
+    }
+
+label {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    float: left;
+}
+</style>

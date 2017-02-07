@@ -1,4 +1,4 @@
-﻿
+﻿@model BePro.Website.Public.Models.RegistrationViewModel
 @{
     ViewBag.Title = "Registration";
 }
@@ -9,112 +9,134 @@
             <h2>რეგისტრაცია</h2>
         </div>
 
-        <form action="../Home/Registration" method="post">
+        @using (Html.BeginForm("Registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
             <div class="row">
                 <div class="col-md-6 col-xs-6 col-sm-6">
                     <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="სახელი">
-                    </div>
-                </div>
-                <div class="col-md-6 col-xs-6 col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="გვარი">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-xs-6 col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="პირადი ნომერი">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "სახელი" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
                     <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="დაბადების თარიღი">
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "გვარი" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-xs-6 col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="მობილური ტელეფონის ნომერი">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.PrivateNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "პირადი ნომერი" } })
+                            @Html.ValidationMessageFor(model => model.PrivateNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "დაბადების თარიღი" } })
+                            @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-6 col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="ელ-ფოსტა">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "მობილური ტელეფონის ნომერი" } })
+                            @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "ელ-ფოსტა" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control input-sm" placeholder="განათლება">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control input-sm" placeholder="დასაქმებული">
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-xs-6 col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="კომპანია">
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Education, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "განათლება" } })
+                    @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.EditorFor(model => model.Work, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "დასაქმებული" } })
+                    @Html.ValidationMessageFor(model => model.Work, "", new { @class = "text-danger" })
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.WorkCompany, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "კომპანია" } })
+                            @Html.ValidationMessageFor(model => model.WorkCompany, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.WorkPosition, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "პოზიცია" } })
+                            @Html.ValidationMessageFor(model => model.WorkPosition, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-6 col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="პოზიცია">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group btn-clear-form">
+                            <button id="btn-clear" class="btn btn-default" type="reset">გასუფთავება</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group btn-clear-form">
-                        <button id="btn-clear" class="btn btn-default" type="reset">გასუფთავება</button>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group upload-form-group">
+                            @Html.TextBoxFor(m => m.DocumentFile, new { type = "file" })
+                            <label class="btn btn-default" type="button" for="DocumentFile">ატვირთეთ CV</label>
+                            <button class="btn btn-default" type="button">გადმოწერეთ ფორმა</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group upload-form-group">
-                        <input  type="text" disabled>
-                        <button class="btn btn-default" type="button">ატვირთეთ CV</button>
-                        <button class="btn btn-default" type="button">გადმოწერეთ ფორმა</button>
+                <div class="row">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.CourseDates, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "აირჩიე სასურველი თარიღები" } })
+                            @Html.ValidationMessageFor(model => model.CourseDates, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.Course, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "აირჩიე სასურველი კურსი" } })
+                            @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-xs-6 col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="აირჩიე სასურველი თარიღები">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group captcha-form-group">
+                            @Html.EditorFor(model => model.CaptchaInput, new { htmlAttributes = new { @class = "input-sm", placeholder = "შეიყვანეთ ციფრები" } })
+                            @{
+                                    string imageBase64 = Convert.ToBase64String(Model.Captcha);
+                                    string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                                    <img src="@imageSrc" alt="Captcha" />
+                            }
+                            @Html.HiddenFor(model => model.Captcha)
+                            @Html.ValidationMessageFor(model => model.CaptchaInput, "", new { @class = "text-danger" })
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xs-6 col-sm-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-sm" placeholder="აირჩიე სასურველი კურსი">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.TextAreaFor(model => model.Message, new { @class = "form-control", placeholder = "შეტყობინება", rows = 10, id = "message-textarea" })
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group captcha-form-group">
-                        <input type="text">
-                        <img src="https://www.abeautifulsite.net/content/uploads/2011/01/captcha.png" alt="Captcha" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group btn-clear-form">
+                            <button id="btn-submit" class="btn btn-default" type="submit">გაგზავნა</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <textarea id="message-textarea" rows="10" class="form-control" placeholder="შეტყობინება"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group btn-clear-form">
-                        <button id="btn-submit" class="btn btn-default" type="submit">გაგზავნა</button>
-                    </div>
-                </div>
-            </div>
-        </form>
+                                }
     </div>
 </div>
 

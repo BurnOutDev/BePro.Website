@@ -42,8 +42,9 @@ textarea {
     width: 23.4rem;
 }
 
-.upload-form-group > button:first-of-type {
+.upload-form-group > label:first-of-type {
     width: 24.4rem;
+    float: none;
 }
 
 .upload-form-group > button:last-of-type {
