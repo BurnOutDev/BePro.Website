@@ -1,6 +1,7 @@
 ﻿using BePro.Website.Public.DAL;
 using BePro.Website.Public.DAL.Models;
 using BePro.Website.Public.Models;
+using CaptchaMvc.HtmlHelpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -75,22 +76,18 @@ namespace BePro.Website.Public.Controllers
 
         public ActionResult Registration()
         {
-            return View(new RegistrationViewModel()
-            {
-                Captcha = new WebClient().DownloadData("https://www.elie.net/image/public/1430722110/end-of-captcha.jpg?w=370&h=210&c=2&nojs=1")
-            });
+            return View();
         }
 
         [HttpPost]
         public ActionResult Registration(RegistrationViewModel model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && this.IsCaptchaValid("არასწორია"))
             {
                 var entity = new RegistrationEntity()
                 {
-                    BirthDate = model.BirthDate,
+                    BirthDate = model.BirthDate.Value,
                     Course = model.Course,
-                    CourseDates = model.CourseDates,
                     DocumentExtension = Path.GetExtension(model.DocumentFile.FileName),
                     DocumentFile = new BinaryReader(model.DocumentFile.InputStream).ReadBytes(model.DocumentFile.ContentLength),
                     Education = model.Education,
@@ -98,9 +95,8 @@ namespace BePro.Website.Public.Controllers
                     LastName = model.LastName,
                     Message = model.Message,
                     MobileNumber = model.MobileNumber,
-                    Name = model.Name,
+                    FirstName = model.FirstName,
                     PrivateNumber = model.PrivateNumber,
-                    Work = model.Work,
                     WorkCompany = model.WorkCompany,
                     WorkPosition = model.WorkPosition,
                     DateCreated = DateTime.UtcNow,
@@ -111,12 +107,16 @@ namespace BePro.Website.Public.Controllers
                 Context.RegistrationEntities.Add(entity);
                 Context.SaveChanges();
 
-                return Redirect("../Home/Index");
+                return RedirectToAction("SuccessRedirect");
             }
 
             return View(model);
         }
 
+        public ActionResult SuccessRedirect()
+        {
+            return Redirect("http://bepro.com.ge");
+        }
 
         public ActionResult RegistrationView()
         {
@@ -145,6 +145,11 @@ namespace BePro.Website.Public.Controllers
             Context.SaveChanges();
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        public FileResult DownloadCVForm()
+        {
+            return File(Server.MapPath("~/App_Data/CV_Form.docx"), "application/force-download", "BePro_CV_Form.docx");
         }
     }
 }

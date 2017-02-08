@@ -11,7 +11,7 @@ namespace BePro.Website.Public.DAL.Models
         [Key]
         public long EntityID { get; set; }
 
-        public string Name { get; set; }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PrivateNumber { get; set; }
 

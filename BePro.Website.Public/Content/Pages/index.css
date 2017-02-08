@@ -96,10 +96,6 @@
         margin-bottom: 30px;
     }
 
-.portfolio-item {
-    margin-bottom: 30px;
-}
-
     .portfolio-item .hover-bg {
         height: 23rem;
         width: 23rem;
@@ -354,6 +350,7 @@
     #questions .thumbnail {
         background: transparent;
         border: 0;
+        margin: 0;
     }
 
         #questions .thumbnail .caption {
@@ -361,6 +358,13 @@
             color: #777;
         }
 
+    #questions > .container-fluid > .row {
+        display: flex;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
 /* Team Section */
 #team {
@@ -453,9 +457,9 @@ img.img-thumbnail.team-img {
         right: 0;
     }
 
-    #address > .container > form > div > * {
-        pointer-events: all;
-    }
+        #address > .container > form > div > * {
+            pointer-events: all;
+        }
 
 #map {
     height: 46.5rem;

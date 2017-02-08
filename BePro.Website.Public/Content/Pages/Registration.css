@@ -39,10 +39,18 @@ textarea {
 }
 
 .upload-form-group > input {
-    width: 23.4rem;
+    display: none;
 }
 
 .upload-form-group > label:first-of-type {
+    width: 23.4rem;
+    height: 4.8rem;
+    border: 1px solid black;
+    line-height: 4.8rem;
+    font-size: 1.8rem;
+}
+
+.upload-form-group > label:last-of-type {
     width: 24.4rem;
     float: none;
 }
@@ -66,4 +74,8 @@ textarea {
 
 .form-group {
     margin-bottom: 4.4rem;
+}
+
+.captcha-form-group > br {
+    display: none;
 }

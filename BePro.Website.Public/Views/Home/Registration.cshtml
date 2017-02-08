@@ -1,4 +1,5 @@
-﻿@model BePro.Website.Public.Models.RegistrationViewModel
+﻿@using CaptchaMvc.HtmlHelpers
+@model BePro.Website.Public.Models.RegistrationViewModel
 @{
     ViewBag.Title = "Registration";
 }
@@ -9,7 +10,7 @@
             <h2>რეგისტრაცია</h2>
         </div>
 
-        @using (Html.BeginForm("Registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data", onreset = "$('#DocumentFileLabel').text('')" }))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -17,8 +18,8 @@
             <div class="row">
                 <div class="col-md-6 col-xs-6 col-sm-6">
                     <div class="form-group">
-                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "სახელი" } })
-                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "სახელი" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6">
@@ -28,20 +29,20 @@
                     </div>
                 </div>
             </div>
-                <div class="row">
-                    <div class="col-md-6 col-xs-6 col-sm-6">
-                        <div class="form-group">
-                            @Html.EditorFor(model => model.PrivateNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "პირადი ნომერი" } })
-                            @Html.ValidationMessageFor(model => model.PrivateNumber, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xs-6 col-sm-6">
-                        <div class="form-group">
-                            @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "დაბადების თარიღი" } })
-                            @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
-                        </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.PrivateNumber, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "პირადი ნომერი" } })
+                        @Html.ValidationMessageFor(model => model.PrivateNumber, "", new { @class = "text-danger" })
                     </div>
                 </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "დაბადების თარიღი", onfocus = "(this.type='date')", onfocusout = "(this.type='text')", type="text", value="" } })
+                        @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-6 col-sm-6">
                         <div class="form-group">
@@ -60,20 +61,16 @@
                     @Html.EditorFor(model => model.Education, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "განათლება" } })
                     @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.EditorFor(model => model.Work, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "დასაქმებული" } })
-                    @Html.ValidationMessageFor(model => model.Work, "", new { @class = "text-danger" })
-                </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-6 col-sm-6">
                         <div class="form-group">
-                            @Html.EditorFor(model => model.WorkCompany, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "კომპანია" } })
+                            @Html.EditorFor(model => model.WorkCompany, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "დამსაქმებელი (არასავალდებულო)" } })
                             @Html.ValidationMessageFor(model => model.WorkCompany, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-6 col-sm-6">
                         <div class="form-group">
-                            @Html.EditorFor(model => model.WorkPosition, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "პოზიცია" } })
+                            @Html.EditorFor(model => model.WorkPosition, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "პოზიცია (არასავალდებულო)" } })
                             @Html.ValidationMessageFor(model => model.WorkPosition, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -88,20 +85,15 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group upload-form-group">
-                            @Html.TextBoxFor(m => m.DocumentFile, new { type = "file" })
+                            <label id="DocumentFileLabel"></label>
+                            @Html.TextBoxFor(m => m.DocumentFile, new { type = "file", onchange= "$('#DocumentFileLabel').text(this.files[0].name)" })
                             <label class="btn btn-default" type="button" for="DocumentFile">ატვირთეთ CV</label>
-                            <button class="btn btn-default" type="button">გადმოწერეთ ფორმა</button>
+                            <button class="btn btn-default" type="button" onclick="window.location = 'DownloadCVForm'">გადმოწერეთ ფორმა</button>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-xs-6 col-sm-6">
-                        <div class="form-group">
-                            @Html.EditorFor(model => model.CourseDates, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "აირჩიე სასურველი თარიღები" } })
-                            @Html.ValidationMessageFor(model => model.CourseDates, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             @Html.EditorFor(model => model.Course, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "აირჩიე სასურველი კურსი" } })
                             @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
@@ -111,14 +103,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group captcha-form-group">
-                            @Html.EditorFor(model => model.CaptchaInput, new { htmlAttributes = new { @class = "input-sm", placeholder = "შეიყვანეთ ციფრები" } })
-                            @{
-                                    string imageBase64 = Convert.ToBase64String(Model.Captcha);
-                                    string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
-                                    <img src="@imageSrc" alt="Captcha" />
-                            }
-                            @Html.HiddenFor(model => model.Captcha)
-                            @Html.ValidationMessageFor(model => model.CaptchaInput, "", new { @class = "text-danger" })
+                            @Html.Captcha("", "", 6, "", true)
                         </div>
                     </div>
                 </div>

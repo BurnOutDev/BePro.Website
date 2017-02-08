@@ -8,50 +8,40 @@ namespace BePro.Website.Public.Models
 {
     public class RegistrationViewModel
     {
-        [Required]
-        public string Name { get; set; }
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
+        [Display(Name = "სახელი")]
+        public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
         public string LastName { get; set; }
 
-        [Required]
-        [MaxLength(11), MinLength(11), RegularExpression("^[0-9]*$")]
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
+        [MaxLength(11, ErrorMessage = "უნდა იყოს 11 სიმბოლო"), MinLength(11, ErrorMessage = "უნდა იყოს 11 სიმბოლო"), RegularExpression("^[0-9]*$", ErrorMessage = "უნდა შეიცავდეს მხოლოდ ციფრებს")]
         public string PrivateNumber { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
-        public DateTime BirthDate { get; set; }
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
+        public DateTime? BirthDate { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
         [DataType(DataType.PhoneNumber)]
         public string MobileNumber { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
         public string Education { get; set; }
-
-        [Required]
-        public string Work { get; set; }
-
+        
         public string WorkCompany { get; set; }
 
         public string WorkPosition { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
         public HttpPostedFileBase DocumentFile { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "ველი სავალდებულოა")]
         public string Course { get; set; }
-        [Required]
-        public string CourseDates { get; set; }
-
-        public byte[] Captcha { get; set; }
-
-        [Required]
-        public string CaptchaInput { get; set; }
 
         public string Message { get; set; }
     }
