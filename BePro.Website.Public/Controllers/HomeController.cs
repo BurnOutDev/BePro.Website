@@ -30,13 +30,6 @@ namespace BePro.Website.Public.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -55,11 +48,6 @@ namespace BePro.Website.Public.Controllers
         }
 
         public ActionResult Corporate()
-        {
-            return View();
-        }
-
-        public ActionResult News()
         {
             return View();
         }

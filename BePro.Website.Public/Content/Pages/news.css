@@ -84,3 +84,12 @@
     color: #707070;
     font-weight: bolder;
 }
+
+.pagination-active {
+    font-weight: bold;
+}
+
+.pagination-disabled {
+    opacity: 0.4 !important;
+    pointer-events: none;
+}

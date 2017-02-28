@@ -1,0 +1,69 @@
+﻿@using BePro.Website.Public.Models
+@using BePro.Website.Public.Helpers
+@model PagedList<NewsListItemViewModel>
+@{
+    ViewBag.Title = "News";
+}
+
+<!-- Header -->
+<!-- ჩვენი ტრენინგ ცენტრი -->
+<div id="testimonials" class="text-center">
+    <div class="container-fluid">
+        <div class="section-title center">
+            <h2>ჩვენი სიახლეები</h2>
+        </div>
+
+        @{
+            var odd = true;
+
+            foreach (var item in Model)
+            {
+                if (odd)
+                {
+                    <div class="row news-row">
+                        <div class="col-md-6 text-left col-md-offset-1 news-text">
+                            <h2>@item.Title</h2>
+                            <p class="news-date">@item.Date.ToShortDateString()</p>
+                            <p>
+                                @item.Content
+                            </p>
+                            @Html.ActionLink("მეტი", "Read", new { id = item.NewsID }, new { @class = "btn btn-default" })
+                        </div>
+                        <div class="col-md-5 text-left news-picture" style="background-image:url('@item.ThumbnailUrl')"></div>
+                    </div>
+                    odd = false;
+                }
+                else
+                {
+                    <div class="row news-row">
+                        <div class="col-md-5 text-left news-picture" style="background-image:url('@item.ThumbnailUrl')"></div>
+                        <div class="col-md-6 text-left news-text">
+                            <h2>@item.Title</h2>
+                            <p class="news-date">@item.Date.ToShortDateString()</p>
+                            <p>
+                                @item.Content
+                            </p>
+                            @Html.ActionLink("მეტი", "Read", new { id = item.NewsID }, new { @class = "btn btn-default" })
+                        </div>
+                    </div>
+                    odd = true;
+                }
+            }
+        }
+
+        <ul class="pagination news-pagination">
+
+            <li class="page-item @(Model.HasPreviousPage ? "" : "pagination-disabled")">@Html.ActionLink("◄", "Index", new { page = Model.PageIndex }, new { @class = "nav-link" })</li>
+
+            @for (int p = 1; p <= Model.TotalPages; p++)
+            {
+                <li class="page-item">@Html.ActionLink(p.ToString(), "Index", new { page = p }, new { @class = ((Model.PageIndex + 1 == p) ? "nav-link pagination-active" : "nav-link") })</li>
+            }
+
+            <li class="page-item @(Model.HasNextPage ? "" : "pagination-disabled")">@Html.ActionLink("►", "Index", new { page = Model.PageIndex + 2 }, new { @class = "nav-link" })</li>
+
+        </ul>
+    </div>
+</div>
+
+<link href="~/Content/Pages/news.css" rel="stylesheet" />
