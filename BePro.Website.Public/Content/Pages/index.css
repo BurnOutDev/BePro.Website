@@ -351,6 +351,7 @@
         background: transparent;
         border: 0;
         margin: 0;
+        display: inline-block;
     }
 
         #questions .thumbnail .caption {

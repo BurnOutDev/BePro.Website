@@ -203,9 +203,14 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CorporateController.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\OpenDayController.cs" />
+    <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="DAL\Models\Entity.cs" />
     <Compile Include="DAL\Models\MessageEntity.cs" />
     <Compile Include="DAL\Models\RegistrationEntity.cs" />
@@ -213,12 +218,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DateTimeHelper.cs" />
     <Compile Include="Helpers\PagedList.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MessageViewModel.cs" />
     <Compile Include="Models\NewsViewModels.cs" />
+    <Compile Include="Models\PricingViewModels.cs" />
     <Compile Include="Models\RegistrationViewModel.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -531,7 +538,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -554,11 +561,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Come.cshtml" />
-    <Content Include="Views\Home\Prices.cshtml" />
-    <Content Include="Views\Home\Corporate.cshtml" />
+    <Content Include="Views\Pricing\Index.cshtml" />
+    <Content Include="Views\Corporate\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Views\Home\Open.cshtml" />
-    <Content Include="Views\Home\Price.cshtml" />
+    <Content Include="Views\OpenDay\Index.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Home\Registration.cshtml" />
     <Content Include="Views\Home\RegistrationView.cshtml" />
     <Content Include="Views\Admin\Registrations.cshtml" />

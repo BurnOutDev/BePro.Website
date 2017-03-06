@@ -260,14 +260,13 @@ hr {
     }
 
 .section-title.center {
-    padding: 30px 0;
+    padding: 4.4rem 0;
     font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
 
     .section-title h2, .section-title.center h2 {
         font-size: 3rem;
         color: #242424;
-        margin-bottom: 30px;
         font-weight: 500;
     }
 /* About Section */
@@ -510,7 +509,7 @@ ol.type li {
     background-size: cover;
     background-attachment: fixed;
     color: #242424;
-    padding-top: 7rem;
+    padding-top: 0;
 }
 
     #testimonials h2 {

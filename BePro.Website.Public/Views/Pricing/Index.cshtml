@@ -1,4 +1,7 @@
-﻿<!-- Header -->
+﻿@using BePro.Website.Public.Helpers
+@model BePro.Website.Public.Models.TopCoursesViewModel
+
+<!-- Header -->
 <!-- ჩვენი ტრენინგ ცენტრი -->
 <div id="testimonials" class="text-center">
     <div class="container-fluid">
@@ -16,60 +19,60 @@
             <button class="btn btn-default btn-course">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="../img/courses/course1.png" />
+                        <img src="@Model.Course1.IconUrl" />
                     </div>
                     <div class="col-md-6 course-text">
-                        <h2>საკრედიტო ექსპერტი</h2>
-                        <p>ნინო ჩაგუნავა</p>
-                        <p>ოქტომბერი, 2016</p>
+                        <h2>@Model.Course1.Name</h2>
+                        <p>@Model.Course1.AuthorName</p>
+                        <p>@Model.Course1.StartDate.ToShortDateStringGeo()</p>
                     </div>
                     <div class="col-md-3 col-md-right course-price-container">
-                        <h2>250₾</h2>
+                        <h2>@Model.Course1.Price@Model.Course1.CurrencyChar</h2>
                     </div>
                 </div>
             </button>
             <button class="btn btn-default btn-course">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="../img/courses/course2.png" />
+                        <img src="@Model.Course2.IconUrl" />
                     </div>
                     <div class="col-md-6 course-text">
-                        <h2>ფინანსური ანალიტიკა</h2>
-                        <p>იოანე გოლიაძე</p>
-                        <p>ოქტომბერი, 2016</p>
+                        <h2>@Model.Course2.Name</h2>
+                        <p>@Model.Course2.AuthorName</p>
+                        <p>@Model.Course2.StartDate.ToShortDateStringGeo()</p>
                     </div>
                     <div class="col-md-3 col-md-right course-price-container">
-                        <h2>300₾</h2>
+                        <h2>@Model.Course2.Price@Model.Course2.CurrencyChar</h2>
                     </div>
                 </div>
             </button>
             <button class="btn btn-default btn-course">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="../img/courses/course3.png" />
+                        <img src="@Model.Course3.IconUrl" />
                     </div>
                     <div class="col-md-6 course-text">
-                        <h2>რისკები</h2>
-                        <p>ვანო მღებრიშვილი</p>
-                        <p>ოქტომბერი, 2016</p>
+                        <h2>@Model.Course3.Name</h2>
+                        <p>@Model.Course3.AuthorName</p>
+                        <p>@Model.Course3.StartDate.ToShortDateStringGeo()</p>
                     </div>
                     <div class="col-md-3 col-md-right course-price-container">
-                        <h2>200₾</h2>
+                        <h2>@Model.Course3.Price@Model.Course3.CurrencyChar</h2>
                     </div>
                 </div>
             </button>
             <button class="btn btn-default btn-course">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="../img/courses/course4.png" />
+                        <img src="@Model.Course4.IconUrl" />
                     </div>
                     <div class="col-md-6 course-text">
-                        <h2>ექსელი</h2>
-                        <p>ნინო ჩაგუნავა</p>
-                        <p>ოქტომბერი, 2016</p>
+                        <h2>@Model.Course4.Name</h2>
+                        <p>@Model.Course4.AuthorName</p>
+                        <p>@Model.Course4.StartDate.ToShortDateStringGeo()</p>
                     </div>
                     <div class="col-md-3 col-md-right course-price-container">
-                        <h2>350₾</h2>
+                        <h2>@Model.Course4.Price@Model.Course4.CurrencyChar</h2>
                     </div>
                 </div>
             </button>

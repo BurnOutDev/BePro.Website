@@ -37,11 +37,6 @@ namespace BePro.Website.Public.Controllers
             return View();
         }
 
-        public ActionResult Prices()
-        {
-            return View();
-        }
-
         public ActionResult Come()
         {
             return View();
@@ -53,11 +48,6 @@ namespace BePro.Website.Public.Controllers
         }
 
         public ActionResult Open()
-        {
-            return View();
-        }
-
-        public ActionResult Price()
         {
             return View();
         }
