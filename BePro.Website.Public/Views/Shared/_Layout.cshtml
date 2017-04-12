@@ -6,12 +6,21 @@
     <title>@ViewBag.Title - BePro</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/fonts")
-    @Styles.Render("~/Content/lobibox")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
 
+    <link href="~/Content/Css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Css/prettyPhoto.css" rel="stylesheet" />
+    <link href="~/Content/Css/Site.css" rel="stylesheet" />
+                        
+    <link href="~/Content/Css/fonts/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/Css/fonts/bpg-mrgvlovani.min.css" rel="stylesheet" />
+    <link href="~/Content/Css/fonts/bpg-mrgvlovani-caps.min.css" rel="stylesheet" />
+    <link href="~/Content/Css/fonts/OpenSans.css" rel="stylesheet" />
+
+    <link href="~/Content/Css/Lobibox/lobibox.css" rel="stylesheet" />
+
+    <script src="~/Content/Scripts/modernizr-2.8.3.js"></script>
+    <script src="~/Content/Scripts/jquery-3.1.1.js"></script>
+    @RenderSection("HeaderSection", false)
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <div id="preloader">
@@ -193,8 +202,14 @@
         </div>
     </div>
 
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/lobibox")
-    @RenderSection("scripts", required: false)
+    <script src="~/Content/Scripts/bootstrap.js"></script>
+    <script src="~/Content/Scripts/respond.js"></script>
+    <script src="~/Content/Scripts/jquery.prettyPhoto.js"></script>
+    <script src="~/Content/Scripts/jquery.parallax.js"></script>
+    <script src="~/Content/Scripts/jquery.isotope.js"></script>
+    <script src="~/Content/Scripts/main.js"></script>
+
+    <script src="~/Content/Scripts/lobibox/lobibox.js"></script>
+    @RenderSection("FooterSection", false)
 </body>
 </html>
