@@ -5,21 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - BePro</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    @Styles.Render("~/css/style.css")
 
-    <link href="~/Content/Css/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/Css/prettyPhoto.css" rel="stylesheet" />
-    <link href="~/Content/Css/Site.css" rel="stylesheet" />
-                        
-    <link href="~/Content/Css/fonts/font-awesome.css" rel="stylesheet" />
-    <link href="~/Content/Css/fonts/bpg-mrgvlovani.min.css" rel="stylesheet" />
-    <link href="~/Content/Css/fonts/bpg-mrgvlovani-caps.min.css" rel="stylesheet" />
-    <link href="~/Content/Css/fonts/OpenSans.css" rel="stylesheet" />
-
-    <link href="~/Content/Css/Lobibox/lobibox.css" rel="stylesheet" />
-
-    <script src="~/Content/Scripts/modernizr-2.8.3.js"></script>
-    <script src="~/Content/Scripts/jquery-3.1.1.js"></script>
     @RenderSection("HeaderSection", false)
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -202,14 +189,7 @@
         </div>
     </div>
 
-    <script src="~/Content/Scripts/bootstrap.js"></script>
-    <script src="~/Content/Scripts/respond.js"></script>
-    <script src="~/Content/Scripts/jquery.prettyPhoto.js"></script>
-    <script src="~/Content/Scripts/jquery.parallax.js"></script>
-    <script src="~/Content/Scripts/jquery.isotope.js"></script>
-    <script src="~/Content/Scripts/main.js"></script>
-
-    <script src="~/Content/Scripts/lobibox/lobibox.js"></script>
+    @Scripts.Render("~/js/main.js")
     @RenderSection("FooterSection", false)
 </body>
 </html>

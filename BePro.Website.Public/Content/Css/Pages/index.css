@@ -435,6 +435,7 @@ img.img-thumbnail.team-img {
 
 #address {
     /*background: url(../../img/map.jpg) center;*/
+    margin-bottom: -44px;
     height: 46.5rem;
 }
 
