@@ -82,8 +82,9 @@
         background: #1d8e96;
     }
 
-.training-buttons-container {
-    margin: 0 !important;
+.training-buttons-container > * {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 
