@@ -1,5 +1,4 @@
-﻿@using CaptchaMvc.HtmlHelpers
-@model BePro.Website.Public.Models.RegistrationViewModel
+﻿@model BePro.Website.Public.Models.RegistrationViewModel
 @{
     ViewBag.Title = "Registration";
 }
@@ -97,13 +96,6 @@
                         <div class="form-group">
                             @Html.EditorFor(model => model.Course, new { htmlAttributes = new { @class = "form-control input-sm", placeholder = "აირჩიე სასურველი კურსი" } })
                             @Html.ValidationMessageFor(model => model.Course, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group captcha-form-group">
-                            @Html.Captcha("", "", 6, "", true)
                         </div>
                     </div>
                 </div>

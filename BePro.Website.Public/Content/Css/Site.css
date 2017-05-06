@@ -204,7 +204,7 @@ hr {
     border-color: #cd3f00;
     padding: 12px 24px;
     margin: 0 8px;
-    font-size: 18px;
+    font-size: 24px;
     transition: all 0.5s;
     font-family: 'BPG Mrgvlovani Caps', sans-serif;
 }
@@ -252,6 +252,7 @@ label {
     color: #777;
     padding: 20px 0;
     text-align: center;
+    margin-top: 44px;
 }
 
     #footer a {
@@ -267,11 +268,6 @@ label {
         margin-top: 10px;
     }
 
-@media (max-width: 768px) {
-    .hover-bg .hover-text {
-        padding: 20%;
-    }
-}
 
 @media (max-width: 640px) {
     #intro .intro-body H1 {
@@ -569,4 +565,22 @@ input[type='checkbox'] {
 
 .lobibox-notify-msg {
     font-family: 'BPG Mrgvlovani', sans-serif;
+}
+
+.margin-2 {
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+.margin-top-2 {
+    margin-top: 22px;
+}
+
+.margin-1 {
+    margin-top: 11px;
+    margin-bottom: 11px;
+}
+
+.margin-top-1 {
+    margin-top: 11px;
 }

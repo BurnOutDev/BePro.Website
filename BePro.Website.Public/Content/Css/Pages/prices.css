@@ -351,7 +351,6 @@ hr {
 }
 /* Gallery Section */
 #works {
-    padding: 120px 0;
     background: #f6f6f6;
 }
 
@@ -426,7 +425,7 @@ ol.type li {
     }
 
 .portfolio-item {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
     .portfolio-item .hover-bg {

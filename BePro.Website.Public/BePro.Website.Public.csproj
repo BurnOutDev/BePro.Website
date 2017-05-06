@@ -126,6 +126,7 @@
     <Compile Include="Controllers\OpenDayController.cs" />
     <Compile Include="Controllers\PricingController.cs" />
     <Compile Include="Controllers\TrainerController.cs" />
+    <Compile Include="Controllers\TrainingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -144,6 +145,28 @@
     <Content Include="Content\Css\bootstrap.min.css" />
     <Content Include="Content\Css\fonts\font-awesome.css" />
     <Content Include="Content\Css\fonts\font-awesome.min.css" />
+    <Content Include="Content\Css\OwlCarousel\ajax-loader.gif" />
+    <Content Include="Content\Css\OwlCarousel\owl.carousel.css" />
+    <Content Include="Content\Css\OwlCarousel\owl.carousel.min.css" />
+    <Content Include="Content\Css\OwlCarousel\owl.theme.default.css" />
+    <Content Include="Content\Css\OwlCarousel\owl.theme.default.min.css" />
+    <Content Include="Content\Css\OwlCarousel\owl.theme.green.css" />
+    <Content Include="Content\Css\OwlCarousel\owl.theme.green.min.css" />
+    <Content Include="Content\Css\OwlCarousel\owl.video.play.png" />
+    <Content Include="Content\Css\Pages\training.css" />
+    <Content Include="Content\images\Pages\About\about-trainer-quote.png" />
+    <Content Include="Content\images\Pages\About\trainer-thumbnail.png" />
+    <Content Include="Content\images\Pages\Pricing\1.png" />
+    <Content Include="Content\images\Pages\Pricing\2.png" />
+    <Content Include="Content\images\Pages\Pricing\3.png" />
+    <Content Include="Content\images\Pages\Pricing\4.png" />
+    <Content Include="Content\images\Pages\Pricing\5.png" />
+    <Content Include="Content\images\Pages\Pricing\6.png" />
+    <Content Include="Content\images\Pages\Pricing\7.png" />
+    <Content Include="Content\images\Pages\Pricing\8.png" />
+    <Content Include="Content\images\Pages\Pricing\9.png" />
+    <Content Include="Content\images\Pages\Trainer\trainer.png" />
+    <Content Include="Content\images\Pages\Training\training-thumbnail.png" />
     <Content Include="Content\images\prettyPhoto\dark_rounded\btnNext.png" />
     <Content Include="Content\images\prettyPhoto\dark_rounded\btnPrevious.png" />
     <Content Include="Content\images\prettyPhoto\dark_rounded\contentPattern.png" />
@@ -201,6 +224,9 @@
     <Content Include="Content\Css\prettyPhoto.css" />
     <Content Include="Content\Scripts\jquery.isotope.js" />
     <Content Include="Content\Scripts\jquery.parallax.js" />
+    <Content Include="Content\Scripts\OwlCarousel\owl.carousel.js" />
+    <Content Include="Content\Scripts\OwlCarousel\owl.carousel.min.js" />
+    <Content Include="Content\Scripts\Pages\Pricing\Pricing.js" />
     <Content Include="Content\Scripts\SmoothScroll.js" />
     <Content Include="favicon.ico" />
     <Content Include="Content\Css\fonts\fontawesome-webfont.svg" />
@@ -356,6 +382,7 @@
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Home\Registration.cshtml" />
     <Content Include="Views\Trainer\Index.cshtml" />
+    <Content Include="Views\Training\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -81,53 +81,34 @@
 </div>
 
 
-<div id="testimonials" class="text-center">
+<div id="works">
     <div class="container">
-        <div class="section-title center">
+        <!-- Container -->
+        <div class="section-title text-center center">
             <h2>ყველა სასწავლო პროგრამა და მათი ფასები</h2>
         </div>
         <div class="row">
-            <div class="col-md-4 text-left">
-                <a><p>ბიოსამედიცინო ინჟინერია</p></a>
-                <br />
-                <a><p>ქიმიური</p></a>
-                <br />
-                <a><p>ქიმია</p></a>
-                <br />
-                <a><p>კომპიუტერული მეცნიერება</p></a>
-                <br />
-                <a><p>აღმოსავლეთ აზიის ენები</p></a>
-                <br />
-                <a><p>ეკოლოგია </p></a>
-                <br />
-            </div>
-            <div class="col-md-4 text-left">
-                <a><p>ეკოლოგია</p></a>
-                <br />
-                <a><p>კომპიუტერული მეცნიერება</p></a>
-                <br />
-                <a><p>აღმოსავლეთ აზიის ენები</p></a>
-                <br />
-                <a><p>ქიმია</p></a>
-                <br />
-                <a><p>ქიმიური</p></a>
-                <br />
-                <a><p>ბიოსამედიცინო ინჟინერია</p></a>
-                <br />
-            </div>
-            <div class="col-md-4 text-left">
-                <a><p>ბიოსამედიცინო ინჟინერია</p></a>
-                <br />
-                <a><p>ქიმიური</p></a>
-                <br />
-                <a><p>აღმოსავლეთ აზიის ენები</p></a>
-                <br />
-                <a><p>ქიმია</p></a>
-                <br />
-                <a><p>კომპიუტერული მეცნიერება</p></a>
-                <br />
-                <a><p>ეკოლოგია </p></a>
-                <br />
+            <div class="portfolio-items isotope" style="position: relative; overflow: hidden; height: 419px;">
+                @{ 
+                    var Courses = Enumerable.Range(1,8);
+                }
+
+                @foreach (var course in Courses)
+                {
+                    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 lorem isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                        <div class="portfolio-item">
+                            <div class="hover-bg">
+                                <a href="#" title="Project description" rel="prettyPhoto">
+                                    <div class="hover-text">
+                                        <h4></h4>
+                                        <p></p>
+                                    </div>
+                                    <img src="~/Content/images/Pages/Pricing/@(course).png" class="img-responsive">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -135,4 +116,5 @@
 
 @section FooterSection {
     <link href="~/Content/Css/Pages/prices.css" rel="stylesheet" />
+    <script src="~/Content/Scripts/jquery.isotope.js"></script>
 }
